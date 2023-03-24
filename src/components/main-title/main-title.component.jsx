@@ -1,7 +1,9 @@
-const MainTitle = () => {
+const MainTitle = ({title}) => {
   return (
-    <h2>Main Title</h2>
-  )
-}
+    <div className="main-title">
+      <h2>{title}</h2>
+    </div>
+  );
+};
 
-export default MainTitle; 
+export default MainTitle;
