@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "title": "Equal Bre.",
+    "duration": 120,
+    "sequence": {
+      "inhale": 4,
+      "hold1": 0,
+      "exhale": 4,
+      "hold2": 0
+    }
+  },
+  {
+    "id": 2,
+    "title": "Box Bre.",
+    "duration": 120,
+    "sequence": {
+      "inhale": 4,
+      "hold1": 4,
+      "exhale": 4,
+      "hold2": 4
+    }
+  },
+  {
+    "id": 3,
+    "title": "Anxiety Bre.",
+    "duration": 120,
+    "sequence": {
+      "inhale": 4,
+      "hold1": 7,
+      "exhale": 8,
+      "hold2": 0
+    }
+  },
+  {
+    "id": 4,
+    "title": "Have a Break",
+    "duration": 120,
+    "sequence": {
+      "inhale": 4,
+      "hold1": 2,
+      "exhale": 4,
+      "hold2": 2
+    }
+  }
+]

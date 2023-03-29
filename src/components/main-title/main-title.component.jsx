@@ -1,8 +1,10 @@
-const MainTitle = ({title}) => {
+import { TitleContainer } from "./main-title.styles";
+
+const MainTitle = ({ title }) => {
   return (
-    <div className="main-title">
+    <TitleContainer>
       <h2>{title}</h2>
-    </div>
+    </TitleContainer>
   );
 };
 

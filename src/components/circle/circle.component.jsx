@@ -1,8 +1,9 @@
+import { CircleContainer, DurationTitle } from "./circle.styles";
 const Circle = () => {
   return (
-    <div className="circle">
-      <h2>Circle</h2>
-    </div>
+    <CircleContainer>
+      <DurationTitle>Start</DurationTitle>
+    </CircleContainer>
   );
 };
 
