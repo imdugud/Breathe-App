@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { theme } from "../../styles/theme.styles";
 const { dark, circleColor } = theme;
 
-export const CircleContainer = styled.div`
+export const CircleContainer = styled.span`
   width: 200px;
   height: 200px;
   border-radius: 50%;

@@ -1,11 +1,12 @@
-import { useContext } from "react";
-import { BreatheTypesContext } from "../../contexts/breathe-types.context";
+import { useSelector } from "react-redux";
+import { typesSelector } from "../../store/breathe-types/breathe-type.slice.js";
 import TypeButton from "../type-button/type-button.component";
 
 import { TypeButtonContainer } from "./buttons-container.styles";
 
 const ButtonContainer = () => {
-  const { breathTypes } = useContext(BreatheTypesContext);
+  const { breathTypes } = useSelector(typesSelector);
+
   return (
     <TypeButtonContainer>
       {breathTypes.map((type) => {

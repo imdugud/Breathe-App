@@ -24,8 +24,8 @@ export const BaseButton = styled.button`
 `;
 
 export const SelectedButton = styled(BaseButton)`
-  background-color: #4285f4;
-  color: white;
+  background-color: white;
+  color: pink;
 
   &:hover {
     background-color: #357ae8;

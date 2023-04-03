@@ -1,19 +1,49 @@
-import { useContext } from "react";
-import { MeditateContext } from "../../contexts/meditate.context";
+import { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  typesSelector,
+  setIsRunning,
+} from "../../store/breathe-types/breathe-type.slice";
 import { CircleContainer, DurationTitle } from "./circle.styles";
 
-const Circle = ({ duration, sequence }) => {
-  const { isStarted, setIsStarted } = useContext(MeditateContext);
-
+const Circle = () => {
+  const dispatch = useDispatch();
+  const { isRunning, currentType } = useSelector(typesSelector);
+  // const [intervalId, setIntervalId] = useState(0);
+  const [duration, setDuration] = useState(0);
+  const [sequence, setSequence] = useState([]);
   const StartAnimateHandler = () => {
-     setIsStarted(!isStarted); 
+    dispatch(setIsRunning(true));
   };
+
+  useEffect(() => {
+    setDuration(currentType.duration);
+    setSequence(currentType.sequence);
+  }, [])
+
+
+  //
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      console.log(duration);
+      setDuration((duration) => duration - 1);
+    }, 1000);
+
+    if (!isRunning || duration <= 0) { 
+      clearInterval(intervalId);
+    }
+    isRunning ? "resumeanimation" : "stopanimation"
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, [isRunning, duration]);
+  
+
   return (
     <CircleContainer>
       <DurationTitle onClick={StartAnimateHandler}>
-        {sequence}
+        {isRunning ? duration : "Start"}
       </DurationTitle>
-      {duration}
     </CircleContainer>
   );
 };
